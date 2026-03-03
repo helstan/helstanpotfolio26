@@ -134,10 +134,11 @@ const insights = [
 ];
 
 const certs = [
-  { name: 'Digital Strategies', color: '#EF4444', url: 'https://www.coursera.org/account/accomplishments/verify/LTWAQH6C4BAW' },
-  { name: 'PG Diploma — Marketing', color: '#10B981', url: 'https://coursera.org/share/89fecccb70c9200a3ded986bd5cdeaec' },
-  { name: 'Full Stack Digital Mktg', color: '#FACC15', url: 'https://certificate.givemycertificate.com/c/d66b3424-387c-4ad6-87fe-428dc4e0e78a' },
-  { name: 'Meta Analytics', color: '#1D4ED8', url: 'https://www.credential.net/f434fd6e-ee76-46d9-ad79-2d0edf63a570#acc.GH3enOhN' },
+  { name: 'Digital Strategies', color: '#EF4444', url: 'https://www.coursera.org/account/accomplishments/verify/LFAN65SYSLYA?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course' },
+  { name: 'PG Diploma — Marketing', color: '#10B981', url: 'https://www.credential.net/f434fd6e-ee76-46d9-ad79-2d0edf63a570#acc.GH3enOhN' },
+  { name: 'Full Stack Digital Mktg', color: '#FACC15', url: 'https://certificate.givemycertificate.com/c/d66b3424-387c-4ad6-87fe-428dc4-' },
+  { name: 'Meta Analytics', color: '#1D4ED8', url: 'https://www.coursera.org/account/accomplishments/verify/LTWAQH6C4BAW' },
+  { name: 'Google Course', color: '#10B981', url: 'https://coursera.org/share/e2ba867dd2da73cf43de7a10fc5f084b' },
 ];
 
 const marqueeItems = ['Meta Ads', 'Google Ads', 'ROAS Scaling', 'CRO', 'LinkedIn Ads', 'D2C Growth', 'B2B Lead Gen', 'GA4 Analytics', 'Creative Strategy', 'Performance Marketing'];
