@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>How I Allocate ₹20 Cr Across Channels Without Wasting a Rupee | Helston D'Souza</title>
+<meta name="description" content="The channel allocation framework I use when managing crore-scale ad budgets — covering Meta, Google, SEO, and the decision logic for moving budget between platforms.">
+<link rel="canonical" href="https://helstondsouza.com/articles/budget-allocation-strategy.html">
+<meta property="og:title" content="How I Allocate ₹20 Cr Across Channels Without Wasting a Rupee">
+<meta property="og:description" content="The channel allocation framework I use when managing crore-scale ad budgets — covering Meta, Google, SEO, and the decision logic for moving budget between platforms.">
+<meta property="og:type" content="article">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:#F5F3EE;color:#111;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:#FACC15;color:#000}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-thumb{background:#111;border-radius:3px}
+a{color:inherit;text-decoration:none}
+#scroll-bar{position:fixed;top:0;left:0;height:4px;background:#FACC15;width:0%;z-index:9999;border-right:3px solid #000;transition:width .1s linear}
+nav{position:sticky;top:0;z-index:100;background:#F5F3EE;border-bottom:4px solid #000;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-weight:900;font-size:16px;text-transform:uppercase;letter-spacing:-.03em;text-decoration:none;color:#111;white-space:nowrap}
+.nav-r{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn-sm{font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.16em;padding:7px 14px;border:3px solid #000;background:#fff;box-shadow:3px 3px 0 #000;text-decoration:none;color:#111;transition:all .2s;border-radius:3px}
+.btn-sm:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #000}
+.btn-sm.cta{background:#FACC15}
+.hero{border-bottom:4px solid #000;padding:56px 24px 44px}
+.hero-inner{max-width:780px;margin:0 auto}
+.art-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;margin-bottom:14px}
+.art-tag::before{content:'';display:block;width:18px;height:2px}
+h1{font-size:clamp(28px,5.5vw,58px);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;line-height:.92;margin-bottom:22px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:5px 11px;border:2px solid currentColor;border-radius:3px}
+/* body */
+.body{max-width:780px;margin:0 auto;padding:56px 24px 80px}
+.lead{font-size:19px;line-height:1.75;font-weight:600;color:#222;margin-bottom:24px;padding-bottom:24px;border-bottom:3px solid #000}
+h2{font-size:clamp(20px,3.5vw,30px);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;margin:44px 0 14px;padding-bottom:8px;border-bottom:4px solid #000;display:inline-block;line-height:1.05}
+h3{font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin:26px 0 8px}
+p{font-size:16.5px;line-height:1.78;color:#333;margin-bottom:16px;font-weight:500}
+ul{margin-bottom:16px;padding-left:0}
+li{font-size:16.5px;line-height:1.7;color:#2a2a2a;font-weight:600;padding:5px 0 5px 22px;position:relative}
+li::before{content:'➔';position:absolute;left:0;font-weight:900;font-size:14px;top:7px}
+ol{list-style:decimal inside;margin-bottom:16px}
+ol li{padding-left:4px}
+ol li::before{content:none}
+/* stat block */
+.stat{border:4px solid #000;padding:26px 28px;margin:28px 0;box-shadow:6px 6px 0 #000;border-radius:4px;position:relative;overflow:hidden}
+.stat-v{font-size:58px;font-weight:900;line-height:1;letter-spacing:-.03em}
+.stat-l{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;margin-top:6px;opacity:.75}
+/* callout */
+.callout{border-left:6px solid #FACC15;padding:14px 18px;background:#fff;margin:24px 0;border:3px solid #000;border-left-width:6px;box-shadow:4px 4px 0 #000;border-radius:0 4px 4px 0}
+.callout p{color:#111;font-weight:700;margin:0;font-size:15.5px;font-style:italic}
+/* 2-col grid */
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:24px 0}
+.gc{border:3px solid #000;padding:18px;background:#fff;box-shadow:4px 4px 0 #000;border-radius:4px}
+.gc h3{margin:0 0 8px;font-size:14px}
+.gc p{font-size:14.5px;margin:0;color:#444}
+/* CTA */
+.cta-strip{background:#FACC15;border:4px solid #000;padding:32px;margin:44px 0;box-shadow:8px 8px 0 #000;text-align:center;border-radius:4px}
+.cta-strip h3{margin:0 0 8px;font-size:22px;font-weight:900;text-transform:uppercase}
+.cta-strip p{font-size:15px;font-weight:600;color:#333;margin-bottom:18px}
+.cta-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.cta-btn{display:inline-flex;align-items:center;gap:6px;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:.1em;padding:13px 24px;border:3px solid #000;box-shadow:4px 4px 0 rgba(0,0,0,.18);border-radius:4px;transition:all .2s}
+.cta-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(0,0,0,.18)}
+.cta-btn.blk{background:#111;color:#fff}
+.cta-btn.grn{background:#10B981;color:#fff}
+/* author */
+.author{border:4px solid #000;padding:26px;background:#111;color:#fff;margin:44px 0 0;box-shadow:8px 8px 0 #FACC15;border-radius:4px}
+.author .aname{font-weight:900;font-size:20px;text-transform:uppercase;letter-spacing:-.02em}
+.author .arole{font-size:11px;text-transform:uppercase;letter-spacing:.15em;opacity:.55;margin-top:3px}
+.author p{font-size:14.5px;color:rgba(255,255,255,.78);margin:10px 0 0}
+/* related */
+.related{margin-top:56px;padding-top:36px;border-top:4px solid #000}
+.rh{font-size:19px;font-weight:900;text-transform:uppercase;margin-bottom:16px}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.rc{border:3px solid #000;padding:16px;background:#fff;box-shadow:4px 4px 0 #000;text-decoration:none;color:#111;display:block;border-radius:4px;transition:all .2s}
+.rc:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #000;background:#FACC15}
+.rc .rtag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#1D4ED8;margin-bottom:6px}
+.rc .rtitle{font-size:13px;font-weight:700;line-height:1.4}
+footer{background:#111;color:#fff;padding:28px 24px;text-align:center;border-top:4px solid #000;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:580px){.stat-v{font-size:40px}h1{font-size:28px}}
+</style>
+</head>
+<body>
+<div id="scroll-bar"></div>
+<nav>
+  <a href="../index.html" class="logo">Helston D'Souza</a>
+  <div class="nav-r">
+    <a href="../index.html#proof" class="btn-sm">Work</a>
+    <a href="../index.html#insights" class="btn-sm">Insights</a>
+    <a href="index.html" class="btn-sm">All Articles</a>
+    <a href="../index.html#contact" class="btn-sm cta">Free Audit</a>
+  </div>
+</nav>
+<div class="hero" style="background:#111;color:#fff">
+  <div class="hero-inner">
+    <div class="art-tag" style="color:rgba(255,255,255,.6)"><span style="background:rgba(255,255,255,.45);height:2px;width:18px;display:block"></span>Budget Strategy · Channel Mix</div>
+    <h1>How I Allocate ₹20 Cr Across Channels Without Wasting a Rupee</h1>
+    <div class="meta-row"><span class="pill" style="background:#FACC15;color:#000;border-color:#000">₹20 Cr+ Managed</span>
+    <span class="pill" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.35)">7 min read</span>
+    <span class="pill" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.35)">Strategy</span>
+    </div>
+  </div>
+</div>
+<article class="body">
+<p class="lead">Managing ₹20 crores in ad spend across multiple brands teaches you one thing fast: allocation mistakes are the most expensive mistakes. Getting channel mix right is worth more than any individual campaign optimisation.</p>
+<div class="stat" style="background:#111;color:#fff"><div class="stat-v">₹20Cr+</div><div class="stat-l">Total ad budget managed across D2C and B2B brands over 3 years</div></div>
+<h2>The Allocation Philosophy</h2>
+<p>Most brands allocate budget based on what's comfortable — they put more money into channels they understand and less into channels that feel risky. This is backwards. Budget should follow data, not comfort zones.</p>
+<div class="callout"><p>"Allocate to where the marginal rupee generates the most incremental revenue — not where you've always spent."</p></div>
+<h2>The Channel Stack: D2C Brands</h2>
+<ul>
+<li><strong>Meta (50–60% of paid budget):</strong> Highest volume, fastest feedback loop, best for creative iteration and prospecting</li>
+<li><strong>Google Shopping/PMax (25–30%):</strong> High-intent buyers actively searching — lower funnel, complements Meta</li>
+<li><strong>Google Search (10–15%):</strong> Brand terms, competitor conquesting, category keywords</li>
+<li><strong>SEO + Content (separate from paid):</strong> Long-term compounding channel — invest consistently, results are slow but free at scale</li>
+</ul>
+<h2>The Channel Stack: B2B Brands</h2>
+<ul>
+<li><strong>Google Search (40–50%):</strong> High-intent B2B queries convert best on Search with tight targeting</li>
+<li><strong>LinkedIn Ads (20–25%):</strong> Role-based targeting for niche B2B audiences — expensive CPL but high close rates</li>
+<li><strong>Meta (20–25%):</strong> Retargeting and awareness for B2B decision-makers — lower funnel LinkedIn leads closed via Meta retargeting</li>
+<li><strong>SEO/Organic (10–15%):</strong> Case studies, whitepapers, and thought leadership for inbound pipeline</li>
+</ul>
+<div class="g2">
+<div class="gc" style="background:#FACC15"><h3>D2C Channel Priority</h3><p>Meta → Google Shopping → Google Search → SEO. Creative velocity is your biggest lever.</p></div>
+<div class="gc" style="background:#1D4ED8;color:#fff"><h3>B2B Channel Priority</h3><p>Google Search → LinkedIn → Meta retargeting → SEO. Intent signals matter more than reach.</p></div>
+</div>
+<h2>When to Shift Budget</h2>
+<p>Move budget between channels when:</p>
+<ul>
+<li>One channel's MER drops below break-even for 2+ consecutive weeks</li>
+<li>A channel is spend-constrained (you've hit audience ceiling or search volume ceiling)</li>
+<li>A new channel test shows MER equal to or better than current primary channels</li>
+<li>Seasonal events shift intent patterns — e.g., Google dominates during sale seasons when people search for deals</li>
+</ul>
+<h2>The Budget Review Cadence</h2>
+<ul>
+<li><strong>Daily:</strong> CPA and ROAS vs. target. Pause obvious losers.</li>
+<li><strong>Weekly:</strong> Channel MER review. Shift 10–15% budget to outperformers.</li>
+<li><strong>Monthly:</strong> Full allocation review. Reassess channel mix based on 30-day data.</li>
+<li><strong>Quarterly:</strong> Strategy review. Test a new channel or format with 5–10% of budget.</li>
+</ul>
+<div class="cta-strip">
+  <h3>Want Me To Audit your campaigns?</h3>
+  <p>Free, no-fluff review of your campaigns, funnels & spend — I'll tell you exactly what's leaking and how to fix it.</p>
+  <div class="cta-btns">
+    <a href="mailto:helstandsouza@gmail.com" class="cta-btn blk">📧 Book Free Audit</a>
+    <a href="https://api.whatsapp.com/send?phone=919594729658&text=Hi%2C%20I%20read%20one%20of%20your%20articles%20and%20want%20to%20discuss%20my%20campaigns." class="cta-btn grn">💬 WhatsApp Me</a>
+  </div>
+</div>
+<div class="author">
+  <div class="aname">Helston D'Souza</div>
+  <div class="arole">Performance Marketing Executive · TruNativ · Mumbai, India</div>
+  <p>3+ years scaling D2C & B2B brands across Meta, Google, SEO & CRO. ₹20 Cr+ ad spend managed. ₹35 Cr+ revenue generated. Highest ROAS: 4–6× in D2C.</p>
+</div>
+<div class="related">
+  <div class="rh">Related Articles</div>
+  <div class="rg"><a href="d2c-roas-scaling-playbook.html" class="rc"><div class="rtag">D2C</div><div class="rtitle">How I Hit 4–6× ROAS for D2C Brands Without Increasing Budget</div></a>
+<a href="pmax-vs-search.html" class="rc"><div class="rtag">Google</div><div class="rtitle">PMax vs Search: When Each Wins and When to Kill</div></a>
+<a href="b2b-lead-gen-linkedin.html" class="rc"><div class="rtag">B2B</div><div class="rtitle">B2B Lead Gen on LinkedIn: How I Built Pipelines for Distributors and Wholesalers</div></a>
+</div>
+</div>
+</article>
+<footer>© 2025 Helston D'Souza · Performance Marketing · Mumbai, India</footer>
+</body>
+</html>

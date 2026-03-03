@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Performance Marketing Insights & Articles | Helston D'Souza</title>
+<meta name="description" content="Real insights from managing ₹20 Cr+ in ad spend — articles on Meta Ads, Google Ads, D2C ROAS scaling, CRO, SEO, B2B lead gen, retention, and attribution by Helston D'Souza.">
+<link rel="canonical" href="https://helstondsouza.com/articles">
+<meta property="og:title" content="Performance Marketing Insights | Helston D'Souza">
+<meta property="og:description" content="14 articles from real campaign experience — Meta, Google, D2C, CRO, B2B, SEO, retention.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:#F5F3EE;color:#111;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:#FACC15;color:#000}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-thumb{background:#111;border-radius:3px}
+a{color:inherit;text-decoration:none}
+#scroll-bar{position:fixed;top:0;left:0;height:4px;background:#FACC15;width:0%;z-index:9999;border-right:3px solid #000;transition:width .1s linear}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:#F5F3EE;border-bottom:4px solid #000}
+.nav-ribbon{background:#111;border-bottom:3px solid #000;padding:0 24px;height:34px;display:flex;align-items:center;justify-content:space-between}
+.nr-left{display:flex;gap:0}
+.nr-link{color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;padding:0 14px;height:34px;display:flex;align-items:center;border-right:1px solid #333;transition:background .15s}
+.nr-link:hover{background:#FACC15;color:#000}
+.nr-right{display:flex;gap:0}
+.nav-main{padding:12px 24px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:900;font-size:18px;text-transform:uppercase;letter-spacing:-.03em}
+.nav-btns{display:flex;gap:8px}
+.btn{font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.16em;padding:8px 16px;border:3px solid #000;background:#fff;box-shadow:3px 3px 0 #000;transition:all .2s;border-radius:3px;cursor:pointer}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #000}
+.btn.yellow{background:#FACC15}
+
+/* ── HERO ── */
+.hero{background:#111;color:#fff;border-bottom:4px solid #000;padding:72px 24px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(250,204,21,.08) 0%,transparent 60%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.hero-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:#888;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.hero-lbl::before{content:'';display:block;width:20px;height:2px;background:#555}
+.hero h1{font-size:clamp(36px,6vw,80px);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;line-height:.9;margin-bottom:24px}
+.hero h1 em{color:#FACC15;font-style:normal}
+.hero p{font-size:18px;font-weight:500;color:rgba(255,255,255,.65);max-width:540px;line-height:1.65;margin-bottom:36px}
+.stats-row{display:flex;flex-wrap:wrap;gap:0;border:3px solid #333;border-radius:4px;overflow:hidden;max-width:600px}
+.stat-item{flex:1;min-width:120px;padding:16px 20px;border-right:2px solid #333}
+.stat-item:last-child{border-right:none}
+.stat-v{font-size:28px;font-weight:900;color:#FACC15;letter-spacing:-.02em}
+.stat-l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.5);margin-top:2px}
+
+/* ── FILTER TABS ── */
+.filters{max-width:1200px;margin:0 auto;padding:32px 24px 0;display:flex;flex-wrap:wrap;gap:8px}
+.ftab{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;padding:8px 16px;border:3px solid #000;border-radius:3px;background:#fff;box-shadow:3px 3px 0 #000;cursor:pointer;transition:all .2s}
+.ftab:hover,.ftab.active{background:#111;color:#fff;transform:translate(-2px,-2px);box-shadow:5px 5px 0 #000}
+.ftab[data-filter="Meta"].active{background:#1D4ED8}
+.ftab[data-filter="Google"].active{background:#EF4444}
+.ftab[data-filter="D2C"].active{background:#FACC15;color:#000}
+.ftab[data-filter="CRO"].active{background:#10B981}
+.ftab[data-filter="B2B"].active{background:#111}
+.ftab[data-filter="SEO"].active{background:#FACC15;color:#000}
+.ftab[data-filter="Strategy"].active{background:#EF4444}
+.ftab[data-filter="Retention"].active{background:#10B981}
+.ftab[data-filter="Analytics"].active{background:#1D4ED8}
+
+/* ── GRID ── */
+.grid-wrap{max-width:1200px;margin:0 auto;padding:32px 24px 80px}
+.count-line{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#888;margin-bottom:20px}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+
+/* ── ARTICLE CARD ── */
+.art-card{border:4px solid #000;border-radius:4px;background:#fff;box-shadow:6px 6px 0 #000;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease;position:relative}
+.art-card:hover{transform:translate(-4px,-4px);box-shadow:10px 10px 0 #000}
+.art-card .card-accent{height:8px;flex-shrink:0}
+.art-card .card-body{padding:22px 22px 18px;flex:1;display:flex;flex-direction:column}
+.card-tag-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.card-tag{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;padding:4px 10px;border:2px solid #000;border-radius:3px;color:#fff}
+.card-num{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#ccc}
+.art-card h2{font-size:17px;font-weight:800;line-height:1.35;letter-spacing:-.01em;margin-bottom:10px;text-transform:uppercase}
+.art-card p{font-size:13.5px;line-height:1.65;color:#555;font-weight:500;flex:1;margin-bottom:0}
+.card-footer{border-top:3px solid #000;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;background:#F5F3EE}
+.card-stat{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:5px 10px;border:2px solid #000;background:#111;color:#fff;border-radius:3px}
+.card-link{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:#111;display:flex;align-items:center;gap:4px;transition:gap .2s}
+.art-card:hover .card-link{gap:8px}
+
+/* ── FEATURED ── */
+.featured{border:4px solid #000;border-radius:4px;background:#FACC15;box-shadow:8px 8px 0 #000;overflow:hidden;margin-bottom:24px;display:grid;grid-template-columns:1fr 1fr;transition:transform .2s,box-shadow .2s}
+.featured:hover{transform:translate(-4px,-4px);box-shadow:12px 12px 0 #000}
+.feat-body{padding:36px;display:flex;flex-direction:column;justify-content:space-between}
+.feat-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;margin-bottom:12px;opacity:.6}
+.feat-body h2{font-size:clamp(20px,3vw,30px);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1.05;margin-bottom:16px}
+.feat-body p{font-size:15px;line-height:1.65;font-weight:500;color:#333;margin-bottom:20px}
+.feat-stat{display:inline-block;background:#111;color:#fff;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;padding:8px 16px;border:3px solid #000;border-radius:3px;box-shadow:3px 3px 0 rgba(0,0,0,.2)}
+.feat-panel{background:#111;border-left:4px solid #000;display:flex;align-items:center;justify-content:center;padding:40px}
+.feat-panel .big-num{font-size:clamp(60px,8vw,100px);font-weight:900;color:#FACC15;letter-spacing:-.04em;line-height:1;text-align:center}
+.feat-panel .big-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.5);text-align:center;margin-top:8px}
+@media(max-width:680px){.featured{grid-template-columns:1fr}.feat-panel{display:none}}
+
+/* ── CTA STRIP ── */
+.cta-strip{background:#111;color:#fff;border:4px solid #000;border-radius:4px;padding:40px;margin:0 24px 60px;max-width:1152px;box-shadow:8px 8px 0 #FACC15;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+.cta-strip h3{font-size:clamp(20px,3vw,28px);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;max-width:400px;line-height:1.1}
+.cta-btns{display:flex;flex-wrap:wrap;gap:10px}
+.cta-btn{display:inline-flex;align-items:center;gap:6px;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:.1em;padding:13px 22px;border:3px solid #000;border-radius:4px;transition:all .2s;box-shadow:4px 4px 0 rgba(255,255,255,.1)}
+.cta-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(255,255,255,.1)}
+.cta-btn.yellow{background:#FACC15;color:#000;border-color:#FACC15}
+.cta-btn.green{background:#10B981;color:#fff}
+
+footer{background:#111;color:#fff;padding:32px 24px;text-align:center;border-top:4px solid #000;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:580px){.article-grid{grid-template-columns:1fr}.filters{padding:24px 16px 0}.grid-wrap{padding:24px 16px 60px}}
+</style>
+</head>
+<body>
+<div id="scroll-bar"></div>
+
+<nav>
+  <div class="nav-ribbon">
+    <div class="nr-left">
+      <a href="../index.html#hero" class="nr-link">Portfolio</a>
+      <a href="../index.html#proof" class="nr-link">Work</a>
+      <a href="../index.html#insights" class="nr-link">Insights</a>
+      <a href="../index.html#contact" class="nr-link">Contact</a>
+    </div>
+    <div class="nr-right">
+      <a href="https://www.linkedin.com/in/helstondsouza/" target="_blank" class="nr-link">LinkedIn</a>
+      <a href="https://api.whatsapp.com/send?phone=919594729658" target="_blank" class="nr-link">WhatsApp</a>
+    </div>
+  </div>
+  <div class="nav-main">
+    <a href="../index.html" class="logo">Helston D'Souza</a>
+    <div class="nav-btns">
+      <a href="../index.html" class="btn">← Portfolio</a>
+      <a href="mailto:helstandsouza@gmail.com" class="btn yellow">Free Audit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-lbl">Performance Marketing Insights</div>
+    <h1>Real Insights.<br/><em>Real Numbers.</em></h1>
+    <p>Not theory. Not recycled advice. These articles come from managing ₹20 Cr+ in ad spend across D2C and B2B brands — and extracting what actually moves the needle.</p>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-v">14</div><div class="stat-l">Articles Published</div></div>
+      <div class="stat-item"><div class="stat-v">₹20Cr+</div><div class="stat-l">Budget Managed</div></div>
+      <div class="stat-item"><div class="stat-v">4–6×</div><div class="stat-l">Peak ROAS D2C</div></div>
+      <div class="stat-item"><div class="stat-v">3 Yrs</div><div class="stat-l">In Performance Mktg</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTERS -->
+<div class="filters" id="filters">
+  <button class="ftab active" data-filter="All" onclick="filterCards('All',this)">All (14)</button>
+  <button class="ftab" data-filter="Meta" onclick="filterCards('Meta',this)">Meta Ads</button>
+  <button class="ftab" data-filter="Google" onclick="filterCards('Google',this)">Google Ads</button>
+  <button class="ftab" data-filter="D2C" onclick="filterCards('D2C',this)">D2C</button>
+  <button class="ftab" data-filter="CRO" onclick="filterCards('CRO',this)">CRO</button>
+  <button class="ftab" data-filter="B2B" onclick="filterCards('B2B',this)">B2B</button>
+  <button class="ftab" data-filter="SEO" onclick="filterCards('SEO',this)">SEO</button>
+  <button class="ftab" data-filter="Strategy" onclick="filterCards('Strategy',this)">Strategy</button>
+  <button class="ftab" data-filter="Retention" onclick="filterCards('Retention',this)">Retention</button>
+  <button class="ftab" data-filter="Analytics" onclick="filterCards('Analytics',this)">Analytics</button>
+</div>
+
+<!-- GRID -->
+<div class="grid-wrap">
+  <div class="count-line" id="count-line">Showing 14 articles</div>
+
+  <!-- FEATURED CARD -->
+  <a href="d2c-roas-scaling-playbook.html" class="featured" data-cats="D2C Strategy Meta Google">
+    <div class="feat-body">
+      <div>
+        <div class="feat-lbl">⭐ Featured Article · D2C · ROAS Scaling</div>
+        <h2>How I Hit 4–6× ROAS for D2C Brands Without Increasing Budget</h2>
+        <p>The exact system covering campaign architecture, creative rotation, landing page alignment, and profit-first scaling — used across ₹20 Cr+ in managed spend.</p>
+      </div>
+      <div><span class="feat-stat">4–6× ROAS Achieved →</span></div>
+    </div>
+    <div class="feat-panel">
+      <div><div class="big-num">4–6×</div><div class="big-lbl">Peak Monthly ROAS</div></div>
+    </div>
+  </a>
+
+  <!-- ARTICLE CARDS -->
+  <div class="article-grid" id="article-grid">
+
+    <a href="broad-audiences-vs-interest-stacking.html" class="art-card" data-cats="Meta">
+      <div class="card-accent" style="background:#FACC15"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#1D4ED8">Meta Ads</span><span class="card-num">#01</span></div>
+        <h2>Why Broad Audiences Beat Interest Stacking in 2024</h2>
+        <p>How removing interest stacks and opening Meta to broad audiences cut CPA by 34% — from real crore-scale D2C campaigns.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">+34% Lower CPA</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="pmax-vs-search.html" class="art-card" data-cats="Google">
+      <div class="card-accent" style="background:#1D4ED8"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#1D4ED8">Google Ads</span><span class="card-num">#02</span></div>
+        <h2>PMax vs Search: When Each Wins and When to Kill</h2>
+        <p>Performance Max or Search — the practical breakdown of when to run each and when PMax is quietly cannibalizing your budget.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">2.1× Higher Conv.</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="one-page-revenue-audit.html" class="art-card" data-cats="CRO">
+      <div class="card-accent" style="background:#EF4444"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#EF4444">CRO</span><span class="card-num">#03</span></div>
+        <h2>The One-Page Audit That Found ₹40L in Leaking Revenue</h2>
+        <p>A 90-minute CRO audit framework that uncovered ₹40 lakhs in monthly revenue being lost through checkout friction and landing page drop-offs.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">-28% Drop-off</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="ugc-scripts-vs-polished-videos.html" class="art-card" data-cats="Meta D2C">
+      <div class="card-accent" style="background:#10B981"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#10B981">Creative</span><span class="card-num">#04</span></div>
+        <h2>UGC Scripts That Outperform Polished Brand Videos Every Time</h2>
+        <p>The exact UGC script structure — hook, bridge, proof, CTA — that delivered 3× CTR uplift vs. high-production brand video ads.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">3× CTR Uplift</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="meta-creative-testing-framework.html" class="art-card" data-cats="Meta">
+      <div class="card-accent" style="background:#1D4ED8"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#1D4ED8">Meta Ads</span><span class="card-num">#05</span></div>
+        <h2>The 5-Creative Testing Framework That Cut CPA in Half</h2>
+        <p>How running 5 hook variants against the same body and CTA systematically reduced cost per acquisition by 50% over 6 weeks.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">-50% CPA</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="budget-allocation-strategy.html" class="art-card" data-cats="Strategy">
+      <div class="card-accent" style="background:#111"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#111">Strategy</span><span class="card-num">#06</span></div>
+        <h2>How I Allocate ₹20 Cr Across Channels Without Wasting a Rupee</h2>
+        <p>The channel allocation framework for D2C and B2B brands — covering Meta, Google, LinkedIn, SEO, and when to shift budget between platforms.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">₹20 Cr+ Managed</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="checkout-optimisation-d2c.html" class="art-card" data-cats="CRO D2C">
+      <div class="card-accent" style="background:#EF4444"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#EF4444">CRO</span><span class="card-num">#07</span></div>
+        <h2>The D2C Checkout Optimisation That Added 18% Revenue in 30 Days</h2>
+        <p>Three specific checkout changes — guest checkout, pre-purchase upsell, payment-step social proof — that added 18% revenue from the same ad spend.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">+18% Revenue</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="b2b-lead-gen-linkedin.html" class="art-card" data-cats="B2B">
+      <div class="card-accent" style="background:#1D4ED8"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#1D4ED8">B2B</span><span class="card-num">#08</span></div>
+        <h2>B2B Lead Gen on LinkedIn: Building Pipelines for Distributors & Wholesalers</h2>
+        <p>How targeted LinkedIn campaigns generated 200+ qualified distributor leads with an 18% close rate for a B2B wellness brand.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">200+ Leads · 18% Close</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="seo-ecommerce-platforms.html" class="art-card" data-cats="SEO D2C">
+      <div class="card-accent" style="background:#10B981"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#10B981">SEO</span><span class="card-num">#09</span></div>
+        <h2>How SEO Across 7 Platforms Added Free Revenue to Our D2C Brand</h2>
+        <p>How optimising listings across Amazon, Flipkart, Meesho, and 4 more platforms built a compounding organic revenue stream alongside paid campaigns.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">3.2× Organic Impressions</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="crm-pipeline-management.html" class="art-card" data-cats="B2B Retention">
+      <div class="card-accent" style="background:#111"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#111">CRM</span><span class="card-num">#10</span></div>
+        <h2>How CRM Pipeline Management Doubled Our Lead Conversion Rate</h2>
+        <p>Restructuring pipeline stages, reducing response time from 4 hours to 15 minutes, and building 8-touch nurture sequences doubled conversion rate in 90 days.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">2× Conversion Rate</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="retention-webengage-mailchimp.html" class="art-card" data-cats="Retention">
+      <div class="card-accent" style="background:#FACC15"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#FACC15;color:#000">Retention</span><span class="card-num">#11</span></div>
+        <h2>Retention Playbook: How WebEngage & Mailchimp Reduced Churn by 35%</h2>
+        <p>The exact retention system — win-back sequences, behavioural triggers, and segmentation strategy — that recovered lapsed customers and reduced churn.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">-35% Churn</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="ga4-attribution-for-performance-marketers.html" class="art-card" data-cats="Analytics">
+      <div class="card-accent" style="background:#EF4444"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#EF4444">Analytics</span><span class="card-num">#12</span></div>
+        <h2>GA4 Attribution: Why Your Conversion Data Is Lying to You</h2>
+        <p>How iOS signal loss, last-click attribution, and cross-device gaps combine to misrepresent your marketing performance — and how to fix it.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">50% Data Recovered</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <a href="influencer-marketing-d2c-mistakes.html" class="art-card" data-cats="D2C Meta">
+      <div class="card-accent" style="background:#10B981"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#10B981">Influencer</span><span class="card-num">#13</span></div>
+        <h2>3 Influencer Marketing Mistakes That Are Killing Your D2C Brand's ROI</h2>
+        <p>Why follower count is a vanity metric, why no trackable conversion path kills ROI, and how to run influencer campaigns like a performance channel.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">2.8× ROAS from UGC</span><span class="card-link">Read →</span></div>
+    </a>
+
+    <!-- Card #14 = featured above, placeholder link in grid -->
+    <a href="d2c-roas-scaling-playbook.html" class="art-card" data-cats="D2C Strategy">
+      <div class="card-accent" style="background:#FACC15"></div>
+      <div class="card-body">
+        <div class="card-tag-row"><span class="card-tag" style="background:#FACC15;color:#000">D2C</span><span class="card-num">#14 ⭐</span></div>
+        <h2>How I Hit 4–6× ROAS for D2C Brands Without Increasing Budget</h2>
+        <p>The complete ROAS system — architecture, creative rotation, landing page match, and profit-first scaling from real crore-scale campaigns.</p>
+      </div>
+      <div class="card-footer"><span class="card-stat">4–6× ROAS</span><span class="card-link">Read →</span></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- CTA STRIP -->
+<div style="max-width:1200px;margin:0 auto;padding:0 24px 80px">
+  <div class="cta-strip">
+    <h3>Ready to apply this to your brand?</h3>
+    <div class="cta-btns">
+      <a href="mailto:helstandsouza@gmail.com" class="cta-btn yellow">📧 Book Free Audit</a>
+      <a href="https://api.whatsapp.com/send?phone=919594729658&text=Hi%2C%20I%20read%20your%20articles%20and%20want%20to%20discuss%20scaling%20my%20brand." class="cta-btn green">💬 WhatsApp Me</a>
+      <a href="https://calendly.com/helstandsouza/30min" target="_blank" class="cta-btn" style="background:#fff;color:#111">📅 Book Strategy Call</a>
+    </div>
+  </div>
+</div>
+
+<footer>© 2025 Helston D'Souza · Performance Marketing · Mumbai, India · <a href="../index.html" style="color:#FACC15">← Back to Portfolio</a></footer>
+
+<script>
+// Scroll bar
+window.addEventListener('scroll',()=>{
+  const pct=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+  document.getElementById('scroll-bar').style.width=pct+'%';
+},{passive:true});
+
+// Filter
+function filterCards(cat, btn) {
+  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = document.querySelectorAll('#article-grid .art-card');
+  const featured = document.querySelector('.featured');
+  let visible = 0;
+  cards.forEach(c=>{
+    const cats = c.dataset.cats || '';
+    const show = cat==='All' || cats.split(' ').includes(cat);
+    c.style.display = show ? '' : 'none';
+    if(show) visible++;
+  });
+  if(featured){
+    const fcats = featured.dataset.cats || '';
+    featured.style.display = (cat==='All' || fcats.split(' ').includes(cat)) ? '' : 'none';
+  }
+  document.getElementById('count-line').innerText = `Showing ${visible} articles`;
+}
+</script>
+</body>
+</html>

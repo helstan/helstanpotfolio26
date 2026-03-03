@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+    --bg:     #F5F3EE;
+    --ink:    #111111;
+    --blue:   #1D4ED8;
+    --yellow: #FACC15;
+    --red:    #EF4444;
+    --green:  #10B981;
+    --white:  #FFFFFF;
+}
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    cursor: none;
+    overflow-x: hidden;
+}
+
+/* Custom Cursor */
+#cursor {
+    position: fixed;
+    width: 14px; height: 14px;
+    background: #000;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: width .2s, height .2s, background .2s;
+    mix-blend-mode: difference;
+    will-change: transform;
+}
+#cursor.big { width: 46px; height: 46px; background: var(--yellow); }
+
+/* Scroll progress */
+#scroll-bar {
+    position: fixed; top: 0; left: 0;
+    height: 4px; background: var(--yellow);
+    width: 0%; z-index: 9999;
+    transition: width .1s linear;
+    border-right: 3px solid #000;
+}
+
+/* Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .65s ease, transform .65s ease;
+}
+.reveal.from-left  { transform: translateX(-50px); }
+.reveal.from-right { transform: translateX(50px); }
+.reveal.visible    { opacity: 1 !important; transform: translate(0,0) !important; }
+.reveal.d1 { transition-delay: .1s; }
+.reveal.d2 { transition-delay: .2s; }
+.reveal.d3 { transition-delay: .3s; }
+.reveal.d4 { transition-delay: .4s; }
+
+/* Hero word stagger */
+.hw {
+    display: inline-block;
+    opacity: 0; transform: translateY(56px);
+    animation: wordIn .7s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes wordIn { to { opacity:1; transform:translateY(0); } }
+
+/* Marquee */
+.mq-outer { overflow: hidden; white-space: nowrap; }
+.mq-track {
+    display: inline-flex;
+    animation: mq 22s linear infinite;
+}
+.mq-track:hover { animation-play-state: paused; }
+@keyframes mq {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.animate-marquee-fast {
+    display: inline-flex;
+    animation: mq-fast 12s linear infinite;
+}
+.animate-marquee-fast:hover { animation-play-state: paused; }
+@keyframes mq-fast {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.mq-item {
+    display: inline-flex; align-items: center; gap: 18px;
+    padding: 0 26px;
+    font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .14em;
+}
+.mq-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); flex-shrink: 0; }
+
+/* Section label */
+.sec-lbl {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .2em; text-transform: uppercase;
+    color: #888; margin-bottom: 12px;
+}
+.sec-lbl::before { content:''; display:block; width:22px; height:2px; background:#999; }
+
+/* Stat bar */
+.stat-track { height: 3px; background: rgba(255,255,255,.3); border-radius:2px; margin-top:8px; overflow:hidden; }
+.stat-fill  { height:100%; background:#fff; width:0; border-radius:2px; transition: width 1.4s cubic-bezier(.4,0,.2,1); }
+
+/* Ghost number */
+.ghost-num {
+    font-size: 88px; font-weight: 900; line-height: 1;
+    opacity: .045;
+    position: absolute; bottom: 8px; right: 14px;
+    pointer-events: none; user-select: none;
+}
+
+/* Hover lift */
+.hover-lift { transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+.hover-lift:hover { transform: translateY(-6px); box-shadow: 12px 12px 0 #000 !important; }
+
+/* Cert badge */
+.cert-badge { transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+.cert-badge:hover { transform: translateY(-4px); box-shadow: 7px 7px 0 #000 !important; }
+
+/* CTA pulse */
+.btn-pulse { position: relative; }
+.btn-pulse::after {
+    content: '';
+    position: absolute; inset: -6px;
+    border: 2px solid #fff;
+    border-radius: 8px; opacity: 0;
+    animation: bpulse 2.6s ease infinite;
+}
+@keyframes bpulse {
+    0%   { opacity:0; transform:scale(.95); }
+    40%  { opacity:.5; }
+    100% { opacity:0; transform:scale(1.1); }
+}
+
+/* Funnel card */
+.funnel-card { transition: transform .25s ease, box-shadow .25s ease; }
+.funnel-card:hover { transform: translateY(-5px); box-shadow: 10px 10px 0 #000 !important; }
+
+/* Insight row */
+.insight-row { transition: transform .2s ease, box-shadow .2s ease; }
+.insight-row:hover { transform: translateX(5px); box-shadow: 8px 8px 0 #000 !important; }
+
+/* Case card */
+.case-card { transition: transform .3s ease, box-shadow .3s ease; }
+.case-card:hover { transform: translateY(-5px); box-shadow: 14px 14px 0 #000 !important; }
+
+/* Footer rule */
+.f-rule { width:0; height:2px; background:#fff; margin:10px auto; transition:width .9s ease; }
+.f-rule.go { width:80px; }
+
+/* Parallax panel hover shimmer */
+.parallax-panel:hover .panel-shimmer { opacity: 1 !important; }
+
+/* Parallax Stacking Fix */
+.parallax-panel {
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.08);
+    position: sticky;
+    z-index: 10;
+    transition: transform 0.3s ease-out;
+}
+
+@media (min-width: 768px) {
+    .parallax-panel {
+        box-shadow: 0 -20px 40px rgba(0,0,0,0.15);
+    }
+}
+
+/* Horizontal scroll exp track */
+#exp-scroll::-webkit-scrollbar { display: none; }
+#exp-scroll { scrollbar-width: none; }
+#exp-scroll { cursor: grab; }
+#exp-scroll:active { cursor: grabbing; }
+
+/* Exp card hover */
+.exp-card:hover { outline: 4px solid #000; outline-offset: 2px; }
+
+@keyframes float { 0%,100%{transform:translateY(0) rotate(45deg)} 50%{transform:translateY(-12px) rotate(45deg)} }
+@keyframes spin  { to { transform: rotate(360deg); } }
+@keyframes pdot  { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.7)} }
+@keyframes fFloat { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-14px)} }
+@keyframes fSpin  { to{transform:rotate(360deg)} }
