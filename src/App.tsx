@@ -62,6 +62,56 @@ const FunnelCard = ({ step, index, total }: any) => {
   );
 };
 
+const RotatingHub = ({ centerText, items, color, icon: Icon }: any) => {
+  return (
+    <div className="relative w-full aspect-square max-w-[450px] mx-auto flex items-center justify-center">
+      {/* Connection Ring */}
+      <div className="absolute inset-0 border-[3px] border-black/10 border-dashed rounded-full scale-[0.85]" />
+      
+      {/* Central Node */}
+      <motion.div 
+        whileHover={{ scale: 1.05 }}
+        className="z-20 w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-black flex flex-col items-center justify-center text-center p-4 shadow-[8px_8px_0px_#000] cursor-default" 
+        style={{ background: color }}
+      >
+        {Icon && <Icon size={24} className="mb-2" />}
+        <span className="font-black text-xl md:text-2xl uppercase tracking-tighter leading-none">{centerText}</span>
+      </motion.div>
+
+      {/* Orbiting Nodes */}
+      <div className="absolute inset-0 animate-[spin_30s_linear_infinite] hover:[animation-play-state:paused]">
+        {items.map((item: string, i: number) => {
+          const angle = (i / items.length) * 2 * Math.PI;
+          const radius = 42.5; // percentage
+          const x = Math.cos(angle) * radius;
+          const y = Math.sin(angle) * radius;
+          return (
+            <div
+              key={item}
+              className="absolute w-20 h-20 md:w-24 md:h-24 flex items-center justify-center"
+              style={{
+                left: `${50 + x}%`,
+                top: `${50 + y}%`,
+                transform: 'translate(-50%, -50%)'
+              }}
+            >
+              {/* Counter-rotate to keep text upright */}
+              <div className="animate-[spin_30s_linear_infinite_reverse] [animation-play-state:inherit] w-full h-full flex items-center justify-center">
+                <motion.div 
+                  whileHover={{ scale: 1.1, backgroundColor: '#FACC15' }}
+                  className="bg-white border-[3px] border-black rounded-full w-full h-full flex items-center justify-center text-center p-2 shadow-[4px_4px_0px_#000] transition-colors cursor-default"
+                >
+                  <span className="font-black text-[9px] md:text-[11px] uppercase tracking-tight leading-tight">{item}</span>
+                </motion.div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
 /* ── DATA ── */
 const services = [
   {
@@ -356,9 +406,33 @@ export default function App() {
 
         {/* SERVICES */}
         <section id="services" className="max-w-7xl mx-auto px-6 py-24">
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-16 inline-block border-b-4 border-black pb-2 reveal">
-            What I Do
-          </h2>
+          <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
+            <div className="reveal">
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-6 inline-block border-b-4 border-black pb-2">
+                What I Do
+              </h2>
+              <p className="text-lg text-gray-500 font-medium mb-8 max-w-lg">
+                I don't just run ads; I build full-funnel growth ecosystems. My approach combines technical precision with creative strategy to drive actual business outcomes.
+              </p>
+              <div className="space-y-4">
+                {['Meta & Google Ads Scaling', 'Funnel Optimization & CRO', 'Revenue-Focused Analytics'].map((item, i) => (
+                  <div key={item} className="flex items-center gap-3 font-black uppercase text-sm">
+                    <div className="w-6 h-6 bg-black text-white flex items-center justify-center rounded-full text-[10px]">{i + 1}</div>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="reveal from-right">
+              <RotatingHub 
+                centerText="Growth" 
+                color="#FACC15" 
+                icon={Target}
+                items={['Meta Ads', 'Google Ads', 'CRO', 'GA4', 'Creative', 'Lead Gen']} 
+              />
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((s, i) => (
               <div key={s.num} className={`reveal d${i + 1} hover-lift bg-white border-[3px] border-black rounded-md p-8 shadow-[8px_8px_0px_#000] relative overflow-hidden`}>
@@ -627,6 +701,31 @@ export default function App() {
 
         {/* WHY ME (Parallax) */}
         <section id="whyme" className="relative pb-10 md:pb-32">
+          <div className="max-w-7xl mx-auto px-6 mb-20">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="reveal order-2 md:order-1">
+                <RotatingHub 
+                  centerText="Helston" 
+                  color="#1D4ED8" 
+                  icon={Zap}
+                  items={['Profit First', 'Data Driven', 'Founder Mindset', 'High Velocity', 'LTV Focused', 'No Vanity']} 
+                />
+              </div>
+              <div className="reveal order-1 md:order-2">
+                <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-6 inline-block border-b-4 border-black pb-2">
+                  The Differentiator
+                </h2>
+                <p className="text-lg text-gray-500 font-medium mb-8 max-w-lg">
+                  Most marketers stop at clicks. I start at margins. My "Founder-Level Thinking" means I treat your ad spend like my own capital, focusing on bottom-line profit.
+                </p>
+                <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_#000] rounded-md">
+                  <div className="font-black text-xs uppercase tracking-widest text-[#1D4ED8] mb-2">Core Philosophy</div>
+                  <div className="text-2xl font-black uppercase leading-tight">"If spending more doesn't make business sense, we don't scale it."</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="parallax-panel bg-[#FACC15] border-4 border-black flex items-center p-[clamp(30px,6vw,80px)_clamp(20px,5vw,60px)] md:p-[clamp(40px,8vw,100px)_clamp(24px,6vw,80px)] overflow-hidden z-[11] sticky md:sticky mb-8 md:mb-0"
             style={{ top: 'clamp(60px, 10vh, 80px)' }}>
             <div className="absolute -right-5 -bottom-10 text-[180px] md:text-[260px] font-black opacity-5 leading-none pointer-events-none">01</div>
