@@ -313,12 +313,12 @@ export default function App() {
               <a href="articles/index.html" className="hover:text-[#1D4ED8] transition-colors">Articles</a>
               <a href="#contact" className="hover:text-[#1D4ED8] transition-colors">Contact</a>
               <div className="w-[2px] h-5 bg-black/15" />
-              <a href="mailto:helstandsouza@gmail.com" className="bg-[#FACC15] text-black border-[3px] border-black px-5 py-2 rounded shadow-[4px_4px_0px_#000] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_#000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all whitespace-nowrap">
+              <a href="https://calendly.com/helstandsouza/30min" target="_blank" className="bg-[#FACC15] text-black border-[3px] border-black px-5 py-2 rounded shadow-[4px_4px_0px_#000] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_#000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all whitespace-nowrap">
                 Book a Call
               </a>
             </div>
             <div className="md:hidden flex items-center gap-2">
-              <a href="mailto:helstandsouza@gmail.com" className="bg-[#FACC15] text-black border-[3px] border-black px-3 py-1.5 rounded shadow-[3px_3px_0px_#000] font-bold uppercase text-xs transition-all hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[5px_5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+              <a href="https://calendly.com/helstandsouza/30min" target="_blank" className="bg-[#FACC15] text-black border-[3px] border-black px-3 py-1.5 rounded shadow-[3px_3px_0px_#000] font-bold uppercase text-xs transition-all hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[5px_5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
                 Talk
               </a>
             </div>
@@ -404,8 +404,8 @@ export default function App() {
           </h2>
         </section>
 
-        {/* SERVICES */}
-        <section id="services" className="max-w-7xl mx-auto px-6 py-24">
+        {/* SERVICES (WHAT I DO) */}
+        <section id="services" className="max-w-7xl mx-auto px-6 py-24 border-t-4 border-black">
           <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
             <div className="reveal">
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-6 inline-block border-b-4 border-black pb-2">
@@ -700,32 +700,7 @@ export default function App() {
         </section>
 
         {/* WHY ME (Parallax) */}
-        <section id="whyme" className="relative pb-10 md:pb-32">
-          <div className="max-w-7xl mx-auto px-6 mb-20">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="reveal order-2 md:order-1">
-                <RotatingHub 
-                  centerText="Helston" 
-                  color="#1D4ED8" 
-                  icon={Zap}
-                  items={['Profit First', 'Data Driven', 'Founder Mindset', 'High Velocity', 'LTV Focused', 'No Vanity']} 
-                />
-              </div>
-              <div className="reveal order-1 md:order-2">
-                <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-6 inline-block border-b-4 border-black pb-2">
-                  The Differentiator
-                </h2>
-                <p className="text-lg text-gray-500 font-medium mb-8 max-w-lg">
-                  Most marketers stop at clicks. I start at margins. My "Founder-Level Thinking" means I treat your ad spend like my own capital, focusing on bottom-line profit.
-                </p>
-                <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_#000] rounded-md">
-                  <div className="font-black text-xs uppercase tracking-widest text-[#1D4ED8] mb-2">Core Philosophy</div>
-                  <div className="text-2xl font-black uppercase leading-tight">"If spending more doesn't make business sense, we don't scale it."</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <section id="whyme" className="relative pb-0">
           <div className="parallax-panel bg-[#FACC15] border-4 border-black flex items-center p-[clamp(30px,6vw,80px)_clamp(20px,5vw,60px)] md:p-[clamp(40px,8vw,100px)_clamp(24px,6vw,80px)] overflow-hidden z-[11] sticky md:sticky mb-8 md:mb-0"
             style={{ top: 'clamp(60px, 10vh, 80px)' }}>
             <div className="absolute -right-5 -bottom-10 text-[180px] md:text-[260px] font-black opacity-5 leading-none pointer-events-none">01</div>
@@ -794,64 +769,65 @@ export default function App() {
             </div>
             <div className="panel-shimmer absolute inset-0 bg-[radial-gradient(circle_at_var(--mx,50%)_var(--my,50%),rgba(255,255,255,.12)_0%,transparent_60%)] opacity-0 transition-opacity duration-300 pointer-events-none z-20" />
           </div>
-        </section>
 
-        {/* CONTACT & FOOTER */}
-        <section id="contact" className="relative min-h-screen bg-[#FACC15] border-t-4 border-black flex flex-col items-center justify-center p-6 md:p-24 text-center overflow-hidden z-40">
-            <div className="absolute inset-0 pointer-events-none opacity-10" style={{ background: 'radial-gradient(circle at center, #0F0F0F 1px, transparent 1px)', backgroundSize: '22px 22px' }} />
-            <div className="absolute top-6 right-8 w-20 h-20 border-4 border-black rounded-full opacity-10 animate-[spin_20s_linear_infinite]" />
-            <div className="absolute bottom-6 left-8 w-12 h-2.5 bg-black opacity-10 rotate-[40deg]" />
+          {/* READY TO SCALE (Final Parallax Panel) */}
+          <section id="contact" className="parallax-panel min-h-screen bg-[#FACC15] border-4 border-black flex flex-col items-center justify-center p-6 md:p-24 text-center overflow-hidden z-[14] sticky md:sticky"
+            style={{ top: 'clamp(180px, 25vh, 200px)' }}>
+              <div className="absolute inset-0 pointer-events-none opacity-10" style={{ background: 'radial-gradient(circle at center, #0F0F0F 1px, transparent 1px)', backgroundSize: '22px 22px' }} />
+              <div className="absolute top-6 right-8 w-20 h-20 border-4 border-black rounded-full opacity-10 animate-[spin_20s_linear_infinite]" />
+              <div className="absolute bottom-6 left-8 w-12 h-2.5 bg-black opacity-10 rotate-[40deg]" />
 
-            <div className="reveal relative z-10 max-w-4xl w-full mx-auto flex flex-col items-center flex-grow justify-center">
-              <h2 className="text-5xl md:text-[96px] font-black uppercase tracking-tighter leading-[0.8] mb-6 drop-shadow-[4px_4px_0px_#fff]">
-                Ready To Scale?
-              </h2>
-              <p className="text-xl md:text-3xl font-bold uppercase tracking-wide mb-10 border-b-[3px] border-black pb-2 inline-block">
-                Let's build your growth engine.
-              </p>
+              <div className="reveal relative z-10 max-w-4xl w-full mx-auto flex flex-col items-center flex-grow justify-center">
+                <h2 className="text-5xl md:text-[96px] font-black uppercase tracking-tighter leading-[0.8] mb-6 drop-shadow-[4px_4px_0px_#fff]">
+                  Ready To Scale?
+                </h2>
+                <p className="text-xl md:text-3xl font-bold uppercase tracking-wide mb-10 border-b-[3px] border-black pb-2 inline-block">
+                  Let's build your growth engine.
+                </p>
 
-              <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8">
-                <div className="flex items-center gap-2 bg-white border-[2px] md:border-[3px] border-black px-3 py-1.5 md:px-4 md:py-2 rounded shadow-[2px_2px_0px_#000] md:shadow-[3px_3px_0px_#000]">
-                  <span className="text-base md:text-lg">🔍</span>
-                  <div className="text-left">
-                    <div className="font-black text-[10px] md:text-xs uppercase tracking-widest text-black">Free Account Audit</div>
-                    <div className="font-medium text-[8px] md:text-[10px] text-gray-500">We'll find what's leaking revenue</div>
+                <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8">
+                  <div className="flex items-center gap-2 bg-white border-[2px] md:border-[3px] border-black px-3 py-1.5 md:px-4 md:py-2 rounded shadow-[2px_2px_0px_#000] md:shadow-[3px_3px_0px_#000]">
+                    <span className="text-base md:text-lg">🔍</span>
+                    <div className="text-left">
+                      <div className="font-black text-[10px] md:text-xs uppercase tracking-widest text-black">Free Account Audit</div>
+                      <div className="font-medium text-[8px] md:text-[10px] text-gray-500">We'll find what's leaking revenue</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white border-[2px] md:border-[3px] border-black px-3 py-1.5 md:px-4 md:py-2 rounded shadow-[2px_2px_0px_#000] md:shadow-[3px_3px_0px_#000]">
+                    <span className="text-base md:text-lg">⚡</span>
+                    <div className="text-left">
+                      <div className="font-black text-[10px] md:text-xs uppercase tracking-widest text-black">7-Day Trial Sprint</div>
+                      <div className="font-medium text-[8px] md:text-[10px] text-gray-500">Results before you commit</div>
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-2 bg-white border-[2px] md:border-[3px] border-black px-3 py-1.5 md:px-4 md:py-2 rounded shadow-[2px_2px_0px_#000] md:shadow-[3px_3px_0px_#000]">
-                  <span className="text-base md:text-lg">⚡</span>
-                  <div className="text-left">
-                    <div className="font-black text-[10px] md:text-xs uppercase tracking-widest text-black">7-Day Trial Sprint</div>
-                    <div className="font-medium text-[8px] md:text-[10px] text-gray-500">Results before you commit</div>
-                  </div>
+
+                <div className="flex flex-wrap justify-center gap-4 mb-6">
+                  <a href="https://calendly.com/helstandsouza/30min" target="_blank" className="btn-pulse bg-black text-white px-6 md:px-12 py-4 md:py-6 text-lg md:text-2xl font-black uppercase tracking-widest border-4 border-black rounded-md shadow-[6px_6px_0px_rgba(0,0,0,.25)] md:shadow-[8px_8px_0px_rgba(0,0,0,.25)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_rgba(0,0,0,.25)] active:translate-x-2 active:translate-y-2 active:shadow-none transition-all inline-flex items-center gap-3">
+                    Book A Strategy Call <ArrowUpRight size={22} strokeWidth={3} className="w-5 h-5 md:w-6 md:h-6" />
+                  </a>
+                  <a href="https://api.whatsapp.com/send?phone=919594729658&text=Hi%2C%20I%E2%80%99m%20looking%20to%20scale%20my%20business%20with%20performance%20marketing.%20Saw%20your%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" className="bg-[#10B981] text-white px-6 md:px-10 py-4 md:py-6 text-lg md:text-2xl font-black uppercase tracking-widest border-4 border-black rounded-md shadow-[6px_6px_0px_rgba(0,0,0,.2)] md:shadow-[8px_8px_0px_rgba(0,0,0,.2)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_rgba(0,0,0,.2)] active:translate-x-2 active:translate-y-2 active:shadow-none transition-all inline-flex items-center gap-3">
+                    <MessageCircle size={24} fill="white" className="w-5 h-5 md:w-6 md:h-6" />
+                    Start Scaling
+                  </a>
+                </div>
+                <p className="font-bold text-[10px] md:text-xs uppercase tracking-widest opacity-40">
+                  Free audit · 7-day trial · No commitment needed
+                </p>
+              </div>
+
+              {/* MINIMAL FOOTER BAR */}
+              <div className="w-full max-w-7xl mx-auto pt-12 mt-auto border-t-2 border-black/10 flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
+                <p className="font-black text-xs uppercase tracking-widest text-black/60">
+                  © {new Date().getFullYear()} Helston D'Souza &nbsp;·&nbsp; Numbers {'>'} Noise
+                </p>
+                <div className="flex gap-6">
+                  <a href="https://www.linkedin.com/in/helstondsouza/" target="_blank" className="font-black text-[10px] uppercase tracking-widest hover:text-[#1D4ED8] transition-colors">LinkedIn</a>
+                  <a href="https://api.whatsapp.com/send?phone=919594729658" target="_blank" className="font-black text-[10px] uppercase tracking-widest hover:text-[#10B981] transition-colors">WhatsApp</a>
+                  <a href="mailto:helstandsouza@gmail.com" className="font-black text-[10px] uppercase tracking-widest hover:text-white transition-colors">Email</a>
                 </div>
               </div>
-
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <a href="https://calendly.com/helstandsouza/30min" target="_blank" className="btn-pulse bg-black text-white px-6 md:px-12 py-4 md:py-6 text-lg md:text-2xl font-black uppercase tracking-widest border-4 border-black rounded-md shadow-[6px_6px_0px_rgba(0,0,0,.25)] md:shadow-[8px_8px_0px_rgba(0,0,0,.25)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_rgba(0,0,0,.25)] active:translate-x-2 active:translate-y-2 active:shadow-none transition-all inline-flex items-center gap-3">
-                  Book A Strategy Call <ArrowUpRight size={22} strokeWidth={3} className="w-5 h-5 md:w-6 md:h-6" />
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=919594729658&text=Hi%2C%20I%E2%80%99m%20looking%20to%20scale%20my%20business%20with%20performance%20marketing.%20Saw%20your%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" className="bg-[#10B981] text-white px-6 md:px-10 py-4 md:py-6 text-lg md:text-2xl font-black uppercase tracking-widest border-4 border-black rounded-md shadow-[6px_6px_0px_rgba(0,0,0,.2)] md:shadow-[8px_8px_0px_rgba(0,0,0,.2)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_rgba(0,0,0,.2)] active:translate-x-2 active:translate-y-2 active:shadow-none transition-all inline-flex items-center gap-3">
-                  <MessageCircle size={24} fill="white" className="w-5 h-5 md:w-6 md:h-6" />
-                  Start Scaling
-                </a>
-              </div>
-              <p className="font-bold text-[10px] md:text-xs uppercase tracking-widest opacity-40">
-                Free audit · 7-day trial · No commitment needed
-              </p>
-            </div>
-
-            {/* MINIMAL FOOTER BAR */}
-            <div className="w-full max-w-7xl mx-auto pt-12 mt-auto border-t-2 border-black/10 flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
-              <p className="font-black text-xs uppercase tracking-widest text-black/60">
-                © {new Date().getFullYear()} Helston D'Souza &nbsp;·&nbsp; Numbers {'>'} Noise
-              </p>
-              <div className="flex gap-6">
-                <a href="https://www.linkedin.com/in/helstondsouza/" target="_blank" className="font-black text-[10px] uppercase tracking-widest hover:text-[#1D4ED8] transition-colors">LinkedIn</a>
-                <a href="https://api.whatsapp.com/send?phone=919594729658" target="_blank" className="font-black text-[10px] uppercase tracking-widest hover:text-[#10B981] transition-colors">WhatsApp</a>
-                <a href="mailto:helstandsouza@gmail.com" className="font-black text-[10px] uppercase tracking-widest hover:text-white transition-colors">Email</a>
-              </div>
-            </div>
+          </section>
         </section>
       </main>
 
