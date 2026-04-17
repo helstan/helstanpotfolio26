@@ -189,6 +189,7 @@ const certs = [
   { name: 'Full Stack Digital Mktg', color: '#FACC15', url: 'https://certificate.givemycertificate.com/c/d66b3424-387c-4ad6-87fe-428dc4-' },
   { name: 'Meta Analytics', color: '#1D4ED8', url: 'https://www.coursera.org/account/accomplishments/verify/LTWAQH6C4BAW' },
   { name: 'Google Course', color: '#10B981', url: 'https://coursera.org/share/e2ba867dd2da73cf43de7a10fc5f084b' },
+  { name: 'Customer Understanding', color: '#EF4444', url: 'https://coursera-certificate-images.s3.amazonaws.com/S0G965RB742B' },
 ];
 
 const marqueeItems = ['Meta Ads', 'Google Ads', 'ROAS Scaling', 'CRO', 'LinkedIn Ads', 'D2C Growth', 'B2B Lead Gen', 'GA4 Analytics', 'Creative Strategy', 'Performance Marketing'];
